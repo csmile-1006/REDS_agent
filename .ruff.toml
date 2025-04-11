@@ -1,0 +1,7 @@
+indent-width = 4
+line-length = 120
+[lint]
+ignore = ["E402", "E722", "E731"]
+[format]
+indent-style = "space"
+quote-style = "double"

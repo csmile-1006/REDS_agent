@@ -1,0 +1,36 @@
+seed: 1234
+
+image_key: "color_image2"
+batch_size: 16
+lr: 1.e-4
+total_steps: 20000
+warmup_steps: 0
+save_interval: 20000
+test_interval: 20000
+viz_interval: 1000
+log_interval: 100
+data_path: "/tmp/fb_sim_data"
+
+ema: 0.9999
+optimizer: "adam"
+lr_schedule: "constant"
+
+image_size: 64
+seq_len: 4
+frame_skip: 4
+# ae_ckpt: "/tmp/viper/metaworld/metaworld_vqgan"
+ae_ckpt: "/tmp/viper/furnituresim/furnituresim_vqgan"
+
+n_classes: 16
+class_cond: false
+
+model: "videogpt"
+transformer:
+  embed_dim: 1024
+  num_heads: 8
+  num_layers: 16
+  mlp_dim: 2048
+  dropout: 0.0
+  attention_dropout: 0.0
+
+open_loop_ctx: 1

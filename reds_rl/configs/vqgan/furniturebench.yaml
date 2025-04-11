@@ -1,0 +1,42 @@
+seed: 1234
+
+image_key: "color_image2"
+batch_size: 128
+lr: 1.e-4
+only_ae_steps: 10000
+total_steps: 20000
+warmup_steps: 1000
+save_interval: 5000
+viz_interval: 5000
+log_interval: 100
+
+data_path: "/tmp/fb_real/one_leg"
+
+image_size: 64
+
+lr_schedule: "constant"
+
+disc_weight: 0.1
+codebook_weight: 1.0
+perceptual_weight: 0.1
+
+model: "vqgan"
+ae:
+  ch: 128
+  ch_mult: [1, 2, 2]
+  num_res_blocks: 2
+  attn_resolutions: []
+  z_channels: 64
+  double_z: false
+  dropout: 0.
+  n_embed: 1024
+  embed_dim: 64
+  patch_size: [4, 4]
+
+disc:
+  base_features: 32
+  max_hidden_feature_size: 512
+  mbstd_group_size: 4
+  mbstd_num_features: 1
+  gradient_penalty_weight: 1.e+8
+

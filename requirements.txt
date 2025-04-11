@@ -1,0 +1,25 @@
+tqdm
+ipdb
+pyyaml
+flax
+tensorflow_datasets
+tensorflow_io
+tensorflow_hub
+moviepy
+protobuf==3.20.3
+lpips-jax
+ffmpeg-python
+internetarchive
+cloudpickle
+crafter
+jaxlib
+numpy
+optax
+rich
+ruamel.yaml
+tensorflow_probability
+dm_control
+opencv-python
+git+https://github.com/csmile-1006/MetaWorld.git@custom
+git+https://github.com/csmile-1006/REDS_reward_learning.git@main
+# gym==0.17.3

@@ -1,0 +1,35 @@
+seed: 1234
+
+image_key: "image_front"
+batch_size: 32
+lr: 1.e-4
+total_steps: 200000
+warmup_steps: 0
+save_interval: 20000
+test_interval: 20000
+viz_interval: 1000
+log_interval: 100
+data_path: "/tmp/rlbench_data"
+
+ema: 0.9999
+optimizer: "adam"
+lr_schedule: "constant"
+
+image_size: 64
+seq_len: 4
+frame_skip: 4
+ae_ckpt: "/tmp/viper/rlbench/rlbench_vqgan"
+
+n_classes: 5
+class_cond: true
+
+model: "videogpt"
+transformer:
+  embed_dim: 512
+  num_heads: 8
+  num_layers: 8
+  mlp_dim: 2048
+  dropout: 0.0
+  attention_dropout: 0.0
+
+open_loop_ctx: 1

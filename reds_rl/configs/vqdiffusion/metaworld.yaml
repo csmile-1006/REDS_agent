@@ -1,0 +1,27 @@
+obs_shape: (3, 64, 64)
+action_shape: (4,)
+rm_model: diffusion_reward
+video_model: vqdiffusion
+pretrain_rm: true
+# ckpt_path: /exp_local/video_models/vqdiffusion/metaworld/checkpoint/best.pth
+# cfg_path: /exp_local/video_models/vqdiffusion/metaworld/.hydra/config.yaml
+ckpt_path: /tmp/DR/metaworld/metaworld_vqgan/checkpoint/best.pth
+cfg_path: /tmp/DR/video_models/vqdiffusion/metaworld/.hydra/config.yaml
+stat_path: /tmp/DR/reward_models/statistics/diffusion_reward/entropy/metaworld.yaml
+reward_type: entropy
+skip_step: 9
+noise: true
+num_sample: 1
+noise_scale: 1
+use_std: true
+use_expl_reward: true
+expl_reward:
+  _target_: diffusion_reward.models.reward_models.expl_rewards.rnd.RND
+  obs_shape: (3, 64, 64)
+  action_shape: (4,)
+expl_lr: 0.0001
+expl_scale: 0.95
+expl_std: true
+expl_update_interval: 1
+use_env_reward: true
+device: 0
